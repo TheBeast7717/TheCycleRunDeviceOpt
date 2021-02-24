@@ -213,7 +213,7 @@ function setup() {
 
   // Creating content Border
   border = createSprite(windowWidth/2,windowHeight/7.5,windowWidth, 10);
-  border.shapeColor = "teal";
+  border.shapeColor = "black";
   border.visible = false;
 
   //Creating the loading scree
