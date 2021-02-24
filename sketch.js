@@ -129,7 +129,7 @@ function setup() {
 
   // Creating the invisible grounds
   //For the upper boundary
-  invisibleGroundUp = createSprite(windowWidth/2,windowHeight-435,windowWidth, 10);
+  invisibleGroundUp = createSprite(windowWidth/2,windowHeight/4,windowWidth, 10);
  
   invisibleGroundUp.visible = false;
   
@@ -212,7 +212,8 @@ function setup() {
 
 
   // Creating content Border
-  border = createSprite(windowWidth/2,windowHeight-495,windowWidth, 10);
+  border = createSprite(windowWidth/2,windowHeight/7.5,windowWidth, 10);
+  border.shapeColor = "black";
   border.visible = false;
 
   //Creating the loading scree
