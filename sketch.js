@@ -36,7 +36,7 @@ let touchDetecter;
 x =200;
 y=200;
 
-var loadingTime = 10; 
+var loadingTime = 250; 
 var loadingScreen,loadingScreenImage;
 
 var symbol , symbolImage;
@@ -616,6 +616,17 @@ function draw() {
 
   // // }
 
+
+  document.addEventListener("orientationchange", function(event){
+    switch(window.orientation) 
+    {  
+        case -90: case 90:
+            /* Device is in landscape mode */
+            break; 
+        default:
+            /* Device is in portrait mode */
+    }
+});
 
 
 
