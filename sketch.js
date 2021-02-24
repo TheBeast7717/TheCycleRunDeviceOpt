@@ -6,7 +6,7 @@ var invisibleGroundUp, invisibleGroundDown, invisibleGroundLeft, invisibleGround
 var redObstacle, redObstacleImage, redObstacleFallImage, redObstacleGroup;
 var yellowObstacle, yellowObstacleImage, yellowObstacleFallImage, yellowObstacleGroup;
 var greenObstacle, greenObstacleImage, greenObstacleFallImage, greenObstacleGroup;
-var otherObstacle1Image, otherObstacle2Image, otherObstacle3Image;
+var otherObstacle1Image, otherObstacle2Image, otherObstacle3Image; 
 var obstacle
 var gameStart, gameStartImage;
 var gameTitle, gameTitleImage;
@@ -1129,7 +1129,7 @@ function spawnRedObstacle() {
     redObstacle.addImage("redObstacleFallImage", redObstacleFallImage)
     redObstacle.scale = 0.067;
     redObstacle.velocityX = -(6 + 1.1*distance / 300);
-    redObstacle.lifetime =windowWidth/7;
+    redObstacle.lifetime =windowWidth/6;
     //redObstacle.debug = true;
     redObstacle.setCollider("rectangle", 0, 440, 870, 320);
     
@@ -1174,7 +1174,7 @@ function spawnYellowObstacle() {
     yellowObstacle.scale = 0.067;
     yellowObstacle.velocityX = -(6.6 + 1.1*distance / 300);
     yellowObstacleGroup.add(yellowObstacle);
-    yellowObstacle.lifetime =windowWidth/7;
+    yellowObstacle.lifetime =windowWidth/6;
    // yellowObstacle.debug = true;
     yellowObstacle.setCollider("rectangle", 0, 420, 1100, 390);
 
@@ -1191,7 +1191,7 @@ function spawnGreenObstacle() {
     greenObstacle.scale = 0.067;
     greenObstacle.velocityX = -(5.5 + 1.1*distance / 300);
     greenObstacleGroup.add(greenObstacle);
-    greenObstacle.lifetime = windowWidth/7;
+    greenObstacle.lifetime = windowWidth/6;
     //greenObstacle.debug = true;
     greenObstacle.setCollider("rectangle", 0, 410, 990, 360);
 
@@ -1206,7 +1206,7 @@ function spawnObstacle2() {
     obstacle2.velocityX =  -(4 + 2 * distance / 150);
     obstacle2.scale = 0.08;
     obstacle2Group.add(obstacle2);
-    obstacle2.lifetime = windowWidth/7;
+    obstacle2.lifetime = windowWidth/6;
     // obstacle2.debug = true;
     obstacle2.setCollider("rectangle", 0, 0, 490, 320);
 
@@ -1241,7 +1241,7 @@ function spawnEnergy() {
     energyDrink.y = windowHeight - Math.round(random(50,400))
     energyDrink.addImage(energyDrinkImage);
     energyDrink.velocityX = road.velocityX;
-    energyDrink.lifetime = windowWidth/7;
+    energyDrink.lifetime = windowWidth/6;
     energyDrinkGroup.add(energyDrink);
     energyDrink.scale = 0.15;
   }
