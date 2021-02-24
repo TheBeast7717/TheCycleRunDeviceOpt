@@ -6,7 +6,7 @@ var invisibleGroundUp, invisibleGroundDown, invisibleGroundLeft, invisibleGround
 var redObstacle, redObstacleImage, redObstacleFallImage, redObstacleGroup;
 var yellowObstacle, yellowObstacleImage, yellowObstacleFallImage, yellowObstacleGroup;
 var greenObstacle, greenObstacleImage, greenObstacleFallImage, greenObstacleGroup;
-var otherObstacle1Image, otherObstacle2Image, otherObstacle3Image; 
+var otherObstacle1Image, otherObstacle2Image, otherObstacle3Image;
 var obstacle
 var gameStart, gameStartImage;
 var gameTitle, gameTitleImage;
@@ -36,7 +36,7 @@ let touchDetecter;
 x =200;
 y=200;
 
-var loadingTime = 250; 
+var loadingTime = 10; 
 var loadingScreen,loadingScreenImage;
 
 var symbol , symbolImage;
@@ -236,22 +236,28 @@ function setup() {
   mobilePhone = createSprite(windowWidth/4,windowHeight/1.5,40,40);
   mobilePhone.addImage(mobilePhoneImage);
   mobilePhone.visible = false;
+ // mobilePhone.debug = true;
+  mobilePhone.setCollider("rectangle",0,0,240,70);
 
   computer = createSprite(windowWidth/1.4,windowHeight/1.5,40,40);
   computer.addImage(computerImage);
   computer.scale = 0.7;
   computer.visible = false;
+  //computer.debug = true;
+  computer.setCollider("rectangle",0,0,180,120);
 
 
   upButton = createSprite(windowWidth/4,windowHeight/1.2,70,70);
   upButton.addImage(upButtonImage);
   upButton.visible = false;
   upButton.scale = 0.5;
+  //upButton.debug = true;
 
   downButton = createSprite(windowWidth/1.4,windowHeight/1.2,70,70);
   downButton.addImage(downButtonImage);
   downButton.visible = false;
   downButton.scale = 0.5;
+ // downButton.debug = true;
 
   accelerator = createSprite(windowWidth/1.2,windowHeight/2,100,40);
   accelerator.visible = false;
@@ -282,6 +288,8 @@ function draw() {
   //   touches = [];
 
   // }
+
+  console.log(touches.length);
 
 
 
@@ -653,6 +661,7 @@ function draw() {
   }
 
   if(((touches.length>0)&&mouseIsOver(mobilePhone)&&gameState===BEFOREPLAY)){
+
     deviceModel = 1;
     console.log(deviceModel);
     touches = [];
@@ -1129,7 +1138,7 @@ function spawnRedObstacle() {
     redObstacle.addImage("redObstacleFallImage", redObstacleFallImage)
     redObstacle.scale = 0.067;
     redObstacle.velocityX = -(6 + 1.1*distance / 300);
-    redObstacle.lifetime =windowWidth/6;
+    redObstacle.lifetime =windowWidth/7;
     //redObstacle.debug = true;
     redObstacle.setCollider("rectangle", 0, 440, 870, 320);
     
@@ -1174,7 +1183,7 @@ function spawnYellowObstacle() {
     yellowObstacle.scale = 0.067;
     yellowObstacle.velocityX = -(6.6 + 1.1*distance / 300);
     yellowObstacleGroup.add(yellowObstacle);
-    yellowObstacle.lifetime =windowWidth/6;
+    yellowObstacle.lifetime =windowWidth/7;
    // yellowObstacle.debug = true;
     yellowObstacle.setCollider("rectangle", 0, 420, 1100, 390);
 
@@ -1191,7 +1200,7 @@ function spawnGreenObstacle() {
     greenObstacle.scale = 0.067;
     greenObstacle.velocityX = -(5.5 + 1.1*distance / 300);
     greenObstacleGroup.add(greenObstacle);
-    greenObstacle.lifetime = windowWidth/6;
+    greenObstacle.lifetime = windowWidth/7;
     //greenObstacle.debug = true;
     greenObstacle.setCollider("rectangle", 0, 410, 990, 360);
 
@@ -1206,7 +1215,7 @@ function spawnObstacle2() {
     obstacle2.velocityX =  -(4 + 2 * distance / 150);
     obstacle2.scale = 0.08;
     obstacle2Group.add(obstacle2);
-    obstacle2.lifetime = windowWidth/6;
+    obstacle2.lifetime = windowWidth/7;
     // obstacle2.debug = true;
     obstacle2.setCollider("rectangle", 0, 0, 490, 320);
 
@@ -1241,7 +1250,7 @@ function spawnEnergy() {
     energyDrink.y = windowHeight - Math.round(random(50,400))
     energyDrink.addImage(energyDrinkImage);
     energyDrink.velocityX = road.velocityX;
-    energyDrink.lifetime = windowWidth/6;
+    energyDrink.lifetime = windowWidth/7;
     energyDrinkGroup.add(energyDrink);
     energyDrink.scale = 0.15;
   }
